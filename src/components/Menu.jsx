@@ -22,12 +22,12 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
     flex:1;
-    background-color: black;
+    background-color: ${({theme}) => theme.bg};
     height: 100vh;
-    color: white;
+    color: ${({theme}) => theme.text};
     font-size: 14px;
-    top:0;
     position: sticky;
+    top:0;
 `;
 
 const Wrapper = styled.div`
@@ -59,9 +59,8 @@ const Hr = styled.hr`
   border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
-const Login = styled.div`
-    
-`;
+const Login = styled.div``;
+
 const Button = styled.button`
     padding: 5px 15px;
     background-color: transparent;
@@ -75,7 +74,14 @@ const Button = styled.button`
     align-items: center;
     gap:5px;
 `;
-export default function Menu(){
+
+const Title = styled.h2`
+      font-style: 14px;
+      font-weight: 500;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+`;
+export default function Menu({ darkMode, setDarkMode }){
   return (
     <Container>
         <Wrapper>
@@ -110,6 +116,9 @@ export default function Menu(){
                 <Button> <AccountCircleOutlinedIcon/> SIGN IN</Button>
             </Login>
             <Hr/>
+            <Title>
+                BEST OF SOCIALTUBE
+            </Title>
             <Item>
                 <LibraryMusicOutlinedIcon />
                 Music
@@ -147,7 +156,11 @@ export default function Menu(){
                 <HelpOutlineOutlinedIcon />
                 Help
             </Item>
+            <Item onClick={() => setDarkMode(!darkMode)}>
+                <SettingsBrightnessOutlinedIcon />
+                {darkMode ? "Light" : "Dark"} Mode
+            </Item>
         </Wrapper>
     </Container>
-  )
-}
+  );
+};
