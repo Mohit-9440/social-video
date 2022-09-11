@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import SocialVideo from "../img/logo.jpg";
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -55,8 +55,8 @@ const Item = styled.div`
 `;
 
 const Hr = styled.hr`
-  margin: 15px 0px;
-  border: 0.5px solid ${({ theme }) => theme.soft};
+    margin: 15px 0px;
+    border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 const Login = styled.div``;
@@ -76,10 +76,10 @@ const Button = styled.button`
 `;
 
 const Title = styled.h2`
-      font-style: 14px;
-      font-weight: 500;
-      color: #aaaaaa;
-      margin-bottom: 20px;
+    font-style: 14px;
+    font-weight: 500;
+    color: #aaaaaa;
+    margin-bottom: 20px;
 `;
 export default function Menu({ darkMode, setDarkMode }){
   return (
